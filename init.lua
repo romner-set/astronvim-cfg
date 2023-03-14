@@ -1,7 +1,10 @@
 return {
   lsp = {
     formatting = {
-      format_on_save = false, -- enable or disable automatic formatting on save
+      format_on_save = false,
+      allow_filetypes = {
+        "ts", "prisma", "toml", "json"
+      },
     },
   },
   mappings = {
@@ -21,12 +24,26 @@ return {
       opts = function(config)
         config.filesystem = {
           filtered_items = {
-            visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+            visible = true,
             hide_dotfiles = false,
             hide_gitignored = true,
           },
         }
         return config
+      end,
+    },
+
+    -- Rust
+    {
+      "simrat39/rust-tools.nvim",
+      config = function() require("rust-tools").setup() end
+    },
+    {
+      'saecki/crates.nvim',
+      tag = 'v0.3.0',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function()
+        require('crates').setup()
       end,
     },
   },
