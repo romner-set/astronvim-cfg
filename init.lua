@@ -8,11 +8,11 @@ return {
     },
   },
   mappings = {
-    n = { j = "k", k = "j" },
+    n = { j = "k", k = "j" }, -- makes hjkl at least sort of useable on colemak
   },
   highlights = {
     init = {
-      Normal = { bg = "NONE" },
+      Normal = { bg = "NONE" }, -- transparent background
     },
   },
   updater = {
