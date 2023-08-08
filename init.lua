@@ -32,6 +32,7 @@ return {
         return config
       end,
     },
+    "stevearc/vim-arduino",
 
     -- Rust
     -- {
